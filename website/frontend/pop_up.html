@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Transparent Popup</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+    }
+
+    .overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      align-items: center;
+      justify-content: center;
+      z-index: 1;
+    }
+
+    .popup {
+      background: rgba(255, 255, 255, 0.9);
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      position: relative;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      cursor: pointer;
+      font-size: 20px;
+      color: #555;
+      background: none;
+      border: none;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      margin: 5px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button.execute-btn {
+      background: #4CAF50;
+      color: #fff;
+    }
+
+    button.terminate-btn {
+      background: #d9534f;
+      color: #fff;
+    }
+
+    button:hover {
+      opacity: 0.8;
+    }
+  </style>
+</head>
+<body>
+
+<div class="overlay" id="overlay">
+  <div class="popup">
+    <button class="close-btn" onclick="closePopup()">&times;</button>
+    <h2>Transparent Popup</h2>
+    <button class="execute-btn" onclick="executeScript()">Execute</button>
+    <button class="terminate-btn" onclick="terminateScript()">Terminate</button>
+  </div>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    // Optionally, you can automatically show the popup when the page loads.
+    // document.getElementById("overlay").style.display = "flex";
+  });
+
+  function openPopup() {
+    document.getElementById("overlay").style.display = "flex";
+  }
+
+  function closePopup() {
+    document.getElementById("overlay").style.display = "none";
+  }
+
+  function executeScript() {
+    alert("Executing script. (Note: This is just a placeholder and won't actually execute a script for security reasons.)");
+    closePopup();
+  }
+
+  function terminateScript() {
+    alert("Terminating script. (Note: This is just a placeholder and won't actually terminate a script for security reasons.)");
+    closePopup();
+  }
+</script>
+
+</body>
+</html>
